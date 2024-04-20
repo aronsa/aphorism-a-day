@@ -1,0 +1,66 @@
+body {
+    background-color: #d9d0b7;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body a {
+    text-decoration: none;
+    font-style: italic; 
+    color: slategray
+  }
+
+  body a :visited {
+    color: lightgray;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .aphorism {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Merriweather', serif;
+  }
+  
+  .meta {
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 40px;
+  }
+  
+  .number {
+    font-weight: bold;
+  }
+  
+  .work {
+    font-style: italic;
+  }
+  
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+  }
+ 
+  .nav-link img {
+    height: 30px;
+    width: auto;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link img:hover {
+    filter: grayscale(20)
+  }
