@@ -27,6 +27,15 @@ with open('beyond-good-and-evil.html', 'r') as file:
 # Now, load all of the aphorisms in to the DB
 conn = sqlite3.connect('aphorisms.db')
 cursor = conn.cursor()
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS aphorisms (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        aphorism TEXT NOT NULL,
+        number INTEGER NOT NULL,
+        work TEXT NOT NULL,
+        work_link TEXT NOT NULL
+    )
+""")
 link = "https://gutenberg.org/ebooks/4363"
 book = "Beyond Good and Evil"
 for aphorism_number in range(0,len(aphorisms)):
