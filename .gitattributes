@@ -1,3 +1,2 @@
 website/icon.png filter=lfs diff=lfs merge=lfs -text
-website/logo.svg filter=lfs diff=lfs merge=lfs -text
 aphorism-generator/aphorisms.db filter=lfs diff=lfs merge=lfs -text
