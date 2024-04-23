@@ -14,19 +14,3 @@ Where you'll write the content of your website.
 ← `website/aphorism.js`: JS logic to inject the aphorism from `website/aphorism.json`.
 
 ← `aphorism-generator`: This directory manages all of the "backend" including the parser from the gutenberg and the SQLite DB that contains the aphorisms. 
-
-## TODO: Share for SEO 
-
-Add these meta tags for SEO and social sharing between your page `<head></head>` tags, changing the values for your site:
-
-```
-<link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
-<meta name="description" content="A simple website, built with Glitch. Remix it to get your own."/>
-<meta name="robots" content="index,follow" />
-<meta property="og:title" content="Hello World!" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
-<meta property="og:description" content="A simple website, built with Glitch. Remix it to get your own."/>
-<meta property="og:image" content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"/>
-<meta name="twitter:card" content="summary" />
-```
