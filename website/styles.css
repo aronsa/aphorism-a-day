@@ -1,10 +1,14 @@
+:root {
+  --background-color: rgb(249, 233, 206)
+}
 body {
-    background-color: #d9d0b7;
+    background-color: var(--background-color);
     color: #000000;
     font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-  }
+    }
   
   body a {
     text-decoration: none;
@@ -22,19 +26,23 @@ body {
     align-items: center;
     min-height: 100vh;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
+    margin-left: 5px;
   }
   
   .aphorism {
-    font-size: 24px;
+    font-size: 18px;
+    line-height: 1.6;
     margin-bottom: 20px;
+    max-width: 50ch;
     font-family: 'Merriweather', serif;
   }
   
   .meta {
     font-size: 18px;
     font-family: 'Open Sans', sans-serif;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 60px;
   }
   
   .number {
@@ -52,6 +60,7 @@ body {
     right: 0;
     padding: 10px;
     text-align: center;
+    background-color: var(--background-color);
   }
  
   .nav-link img {
