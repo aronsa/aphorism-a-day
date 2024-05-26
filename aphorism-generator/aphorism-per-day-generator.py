@@ -1,7 +1,6 @@
 import datetime
 import random
 import math
-import sqlite3
 import json
 from github import Github
 import os
