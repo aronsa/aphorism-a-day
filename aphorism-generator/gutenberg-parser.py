@@ -80,7 +80,7 @@ metadata["global"] = {
 
 aphorism_store_location = args.aphorism_store_location
 print(f"imported aphorisms. printing truncated below")
-with open(aphorism_store_location, "a+") as aphorism_store:
+with open(aphorism_store_location, "w") as aphorism_store:
     json.dump({
         "metadata": metadata,
         "aphorisms": aphorisms
