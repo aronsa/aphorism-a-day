@@ -2,7 +2,6 @@ import datetime
 import random
 import math
 import json
-import sqlite3
 from github import Github
 import os
 
@@ -16,16 +15,28 @@ def generate_new_aphorism():
     random.seed(seed_value)
 
     entry_id = math.floor(random.random()*297)
-    print(f"using seed: {entry_id}")
+    print(f"using generated entry number: {entry_id}")
+    try:
+        return get_aphorism(entry_id)
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
 
-    conn = sqlite3.connect('aphorisms.db')
-    cursor = conn.cursor()
 
-    cursor.execute(f"SELECT * FROM aphorisms WHERE id = {entry_id}")
-    row = cursor.fetchone()
+def get_aphorism(entry_id):
+    # open json file
+    with open('aphorism-store.json', 'r') as file:
+        data = json.load(file)
+        # for now, only beyond good and evil is supported
+        bge = data.get("aphorisms").get("Beyond Good and Evil")
+        metadata = data.get("metadata").get("work").get("Beyond Good and Evil")
+        print(f"bge: {bge.get(str(entry_id), 'no entry')}")
+        aphorism = bge.get(str(entry_id))
 
-    if row:
-        [dump, aphorism, number, work, work_link] = row
+        number = entry_id
+        work_link = metadata.get("link")
+        work = metadata.get("title")
+
         json_data = {
             "aphorism": aphorism,
             "number": number,
@@ -34,8 +45,7 @@ def generate_new_aphorism():
         }
         print(json_data)
         return json_data
-    else:
-        print(f"No entry found with id {entry_id}")
+
 
 def commit_new_aphorism():
     try:
