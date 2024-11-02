@@ -46,22 +46,8 @@ def get_aphorism(entry_id):
         print(json_data)
         return json_data
 
-
-def commit_new_aphorism():
-    try:
-        aphorism_dict = generate_new_aphorism()
-        token = os.environ['GITHUB_TOKEN']
-        g = Github(token)
-        repo = g.get_user().get_repo('aphorism-a-day')
-        file_path = 'website/aphorism.json'  # Path to the file you want to update
-        commit_message = f'🤖 update aphorism / {aphorism_dict["number"]} {aphorism_dict["work"]} / {datetime.date.today() } 🤖'  # Commit message
-        new_content = json.dumps(aphorism_dict, ensure_ascii=False)  # New content for the file
-
-        contents = repo.get_contents(file_path)
-        repo.update_file(contents.path, commit_message, new_content, contents.sha)
-
-        print('Commit created successfully!')
-    except Exception as e:
-        print(f'Error: {e}')
-
-commit_new_aphorism()
+print("generating new aphorism")
+aphorism = generate_new_aphorism()
+print(aphorism)
+with open('../website/aphorism.json', 'w') as file:
+    json.dump(aphorism, file)
