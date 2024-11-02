@@ -2,7 +2,6 @@ import datetime
 import random
 import math
 import json
-from github import Github
 import os
 
 
